@@ -1,0 +1,523 @@
+@font-face {
+    font-family: 'DroidArabicKufi';
+    src: url('asset/Droid.Arabic.Kufi_DownloadSoftware.iR_.ttf') format('truetype');
+}
+
+:root {
+    --main-color: #398138;
+}
+html{
+    scroll-behavior: smooth;
+}
+body {
+    font-family: 'DroidArabicKufi', Arial, sans-serif;
+    direction: rtl;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header{
+  width: 100%;
+    position: relative;
+    height: 100vh;
+    border-radius: 5px;
+    
+}
+
+header img{
+    width: 100%;
+    
+}
+
+
+ /* small screen */
+@media (max-width:767px) {
+  
+    header img{
+        height: 45vh;
+      
+    }
+    header{
+        height: 40vh;
+    }
+}
+
+@media (max-width:991px) {
+    header img{
+        height: 45vh;
+      
+    }
+    header{
+        height: 40vh;
+    }
+}
+
+
+
+.navbar {
+    position: fixed;
+    top: 0px; /* Start off-screen */
+    left: -20px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    color: white;
+    transition: top 0.3s ease-in-out;
+    z-index: 1000;
+}
+
+.navbar.visible {
+    top: 0; /* Slide into view */
+    background-color: rgba(255, 255, 255, 0.522);
+    
+}
+.navbar.visible a{
+    color: #000;
+    
+}
+
+
+
+
+  .navbar .img img {
+    height: 60px;
+  }
+
+  .links {
+    display: flex;
+    align-items: center;
+  }
+
+  .links a {
+    text-decoration: none;
+    color: white;
+    margin: 0 15px;
+    font-size: 16px;
+    transition: color 0.3s ease;
+  }
+
+  .links a:hover {
+    color: #f90;
+  }
+
+  .dropdown {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.dropdown .select {
+    color: white;
+    /* background-color: #333; */
+    padding: 10px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* .dropdown .select:hover {
+    background-color: #f1f1f1;
+    color: #000;
+} */
+
+.dropdown-menu {
+    display: none; /* Hidden by default */
+    position: absolute;
+    right: 0;
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(255, 255, 255, 0);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    z-index: 1000;
+    width: 160px;
+}
+
+.dropdown-menu li {
+    padding: 10px;
+    text-align: right;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.dropdown-menu li:hover {
+    background-color: #f1f1f1;
+    color: #000;
+}
+
+.dropdown-menu a {
+    text-decoration: none;
+    color: #333;
+    display: block;
+}
+
+.landing {
+    
+   position: absolute;
+   bottom: 35px;
+   right: 39%;
+   animation: upDown 2s infinite ease-in-out;
+
+    
+}
+
+
+
+
+.landing img {
+    max-width: 80%;
+    max-height: 80%;
+    object-fit: contain; /* Ensures the image scales properly */
+}
+@keyframes upDown {
+    0%, 100% {
+        transform: translateY(10px); /* Start and end 10px below the original position */
+    }
+    50% {
+        transform: translateY(-20px); /* Move up by 30px at the midpoint */
+    }
+}
+
+/* Styles for screens smaller than 768px */
+@media (max-width: 767px) {
+    .landing img {
+        max-width: 50%;
+        max-height: 50%;
+        object-fit: contain; /* Ensures the image scales properly */
+    }
+    .landing {
+    
+        position: absolute;
+        bottom: -60px;
+        right: 36%;
+        animation: upDown 2s infinite ease-in-out;
+     
+         
+     }
+     
+}
+
+/* Styles for screens between 768px and 991px */
+@media (min-width: 768px) and (max-width: 991px) {
+    .landing img {
+        width: 50%;
+        height: 50%;
+        object-fit: contain; /* Ensures the image scales properly */
+    }
+}
+
+/*ٍsection*/
+
+.info{
+    padding-top: 20px;
+    height: 50%;
+    justify-items: center;
+    
+}
+
+@media (max-width:767px){
+   
+
+   .info .text{
+    width: 100%;
+   
+    
+   }
+    
+}
+
+.info h2{
+
+    color: var(--main-color);
+    font-size: 40px;
+    text-align: center;
+    line-height: 10px;
+   
+}
+
+.info .text{
+
+  /* background-color: #398138; */
+  border-right: 0;
+  border-left: 0;
+  margin-top: 100px;
+  margin-bottom: 20px;
+  width: fit-content;
+
+
+}
+
+.text h2{
+   
+    padding: 25px;
+    transition: 1s ease;
+}
+
+.text h2:hover{
+    background-color: #398138;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+
+}
+
+.info p{
+    font-size: 16px;
+   padding-top: 20px;
+   padding-right: 20px;
+   padding-left: 20px;
+   line-height: 35px;
+}
+
+/*Product*/
+.product{
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+    gap: 60px;
+   transform: translateX(2000px);
+   transition: 1.5s ease;
+   padding-right: 10%;
+   padding-left: 10%;
+   justify-items: center;
+   width: 80%;
+  
+}
+
+
+.one img{
+
+padding-top: 50px;
+transition: 1s ease;
+}
+
+
+
+.product .one{
+border: 1px solid #ccc;
+margin: 10px;
+padding: 15px;
+-webkit-border-radius: 10px;
+-webkit-border-top-left-radius: 60px;
+-moz-border-radius: 10px;
+-moz-border-radius-topleft: 60px;
+border-radius: 10px;
+border-top-left-radius: 60px;
+text-align: center;
+height: 100%;
+width: 100%;
+transition: 1s ease;
+}
+
+
+
+.show{
+    transform: translateX(0);
+}
+.one:hover{
+    cursor: pointer;
+    transform: translatey(-10px);
+    border-radius: 5%;
+    color: rgb(0, 0, 0);
+}
+
+.one:hover img{
+    transform: scale(1.2);
+}
+.hover-3 {
+    --b: 0.1em;   /* the thickness of the line */
+    --c: var(--main-color); /* the color */
+    color: #0000;
+    padding-block: var(--b);
+    background: 
+      linear-gradient(var(--c) 50%,#000 0) 0% calc(100% - var(--_p,0%))/100% 200%,
+      linear-gradient(var(--c) 0 0) 0% var(--_p,0%)/var(--_p,0%) var(--b) no-repeat;
+    -webkit-background-clip: text,padding-box;
+            background-clip: text,padding-box;
+    transition: .3s var(--_s,0s) linear,background-size .3s calc(.3s - var(--_s,0s));
+  }
+  .one:hover .hover-3 {
+    --_p: 100%;
+    --_s: .3s;
+  }
+  .two:hover .hover-3 {
+    --_p: 100%;
+    --_s: .3s;
+  }
+  
+
+ 
+.product2{
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+    transform: translateX(2000px);
+    gap: 60px;
+    transition: 1.5s ease;
+    padding-right: 10%;
+    padding-left: 10%;
+    transition: 1s ease;
+    justify-items: center;
+    width: 80%;
+}
+
+ .two{
+    border: 1px solid #ccc;
+    margin: 10px;
+    padding: 15px;
+    -webkit-border-radius: 10px;
+    -webkit-border-top-left-radius: 60px;
+    -moz-border-radius: 10px;
+    -moz-border-radius-topleft: 60px;
+    border-radius: 10px;
+    border-top-left-radius: 60px;
+    text-align: center;
+    height: 100%;
+    width: 100%;
+    transition: 1s ease;
+
+}
+
+.two:hover{
+    cursor: pointer;
+    transform: translatey(-10px);
+    border-radius: 5%;
+    color: rgb(0, 0, 0);
+}
+
+.showtwo{
+transform: translateX(0);
+}
+
+.product3{
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+    transform: translateX(2000px);
+    gap: 60px;
+    transition: 1.5s ease;
+    justify-items: center;
+    transition: 1s ease;
+    width: 80%;
+    padding-right: 10%;
+    padding-left: 10%;
+   
+}
+
+.showthree{
+    transform: translateX(0);
+}
+
+section{
+    padding-bottom: 10px;
+    margin-bottom: 50px;
+}
+/*Contact us*/
+.contactus{
+    margin-left: 10%;
+    margin-right: 10%;
+    padding-right: 2%;
+    padding-left: 2%;
+    margin-top: 100px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10%;
+
+}
+.contactus .text{
+    font-size: 20px;
+}
+.contactus .info{
+    padding: 10px;
+}
+.contactus .rigthside{
+    padding: 10px;
+}
+
+
+/*button Up*/
+.h-top-link {
+    display: none;
+    
+    width: 48px;
+    height: 48px;
+    text-align: center;
+    background: #107c3fb0;
+    color: #000000;
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    border-radius: 50%;
+}
+
+.h-top-link:hover{
+    cursor: pointer;
+}
+
+.h-top-link i{
+    color: white;
+}
+
+.h-top-link i {
+    margin-top: 16px;
+}
+
+.up{
+display: block;
+}
+
+
+/* WhatsApp Button Styling */
+#whatsapp-button {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background-color: #25D366;  /* WhatsApp Green */
+    padding: 8px;
+    border-radius: 50%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#whatsapp-button img {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+    
+}
+
+#whatsapp-button a {
+    text-decoration: none;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+
+#whatsapp-button:hover {
+    transform: scale(1.1);
+}
+
+#whatsapp-button:active {
+    transform: scale(0.9);
+}
+
+
+
+
+/*Footer*/
+footer{
+    background-color: var(--main-color);
+    color: white;
+    text-align: center;
+    font-size: 15px;
+    margin-top: 10px;
+}
+
+footer p{
+    padding: 0;
+    margin: 0;
+}
+
